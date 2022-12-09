@@ -18,7 +18,7 @@ RSpec.describe 'the songs show page' do
         visit "/projects/#{news_chic.id}"
 
         expect(page).to have_content(news_chic.name)
-        expect(page).to have_content(news_chic.material)
+        expect(page).to have_content("Material: #{news_chic.material}")
       end
     end
   end
