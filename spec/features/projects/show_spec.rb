@@ -8,7 +8,7 @@ require 'rails_helper'
 #     Material: Lamp Shade
 #   Challenge Theme: Apartment Furnishings)
 
-RSpec.describe 'the songs show page' do
+RSpec.describe 'the projects show page' do
   describe 'as a visitor' do
     describe 'I visit a projects show page' do
       it 'I see that projects name and material' do
