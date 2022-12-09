@@ -34,13 +34,12 @@ RSpec.describe 'projects index page' do
       expect(page).to have_content(@erin.name)
     end
     
-    xit 'under each contestants name I see a list of their projects' do
+    it 'under each contestants name I see a list of their projects' do
       visit '/contestants'
       
-      expect(page).to have_content(@jay.projects.name)
-      expect(page).to have_content(@gretchen.projects.name)
-      expect(page).to have_content(@kentaro.projects.name)
-      expect(page).to have_content(@erin.projects.name)
+      expect(page).to have_content('News Chic')
+      expect(page).to have_content('Upholstery Tuxedo')
+      expect(page).to have_content('Boardfit')
     end
   end
 end
