@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Projects Show View', type: :feature do
-  describe 'Project Show' do
+RSpec.describe 'Contestants Index View', type: :feature do
+  describe 'Contestant Index' do
     before :each do
       @recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
       @furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
@@ -25,13 +25,22 @@ RSpec.describe 'Projects Show View', type: :feature do
       ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
       ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
     end
-    it 'displays the project information' do
 
-      visit "/projects/#{@news_chic.id}"
+    it 'Displays all contestants' do
+      visit '/contestants'
 
-      expect(page).to have_content('News Chic')
-      expect(page).to have_content('Newspaper')
-      expect(page).to have_content('Recycled Material')
+      expect(page).to have_content(@jay.name)
+      expect(page).to have_content(@gretchen.name)
+      expect(page).to have_content(@kentaro.name)
+      expect(page).to have_content(@erin.name)
+    end
+
+    it 'Displays all projects for contestants' do
+      visit '/contestants'
+
+      expect(@jay.name).to appear_before(@news_chic.name)
+      expect(@news_chic.name).to appear_before(@gretchen.name)
+      expect(@gretchen.name).to appear_before(@upholstery_tux.name)
     end
   end
 end
