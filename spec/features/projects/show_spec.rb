@@ -12,11 +12,9 @@ RSpec.describe 'the projects show page' do
     it 'shows the project name and material' do
       visit "/projects/#{@news_chic.id}"
       
-      save_and_open_page
-      
       expect(page).to have_content(@news_chic.name) 
       expect(page).to have_content(@news_chic.material) 
-      # expect(page).to have_content(@news_chic.) 
+      expect(page).to have_content(@news_chic.challenge.theme) 
     end
     
     it 'shows the project name and material' do
@@ -24,11 +22,9 @@ RSpec.describe 'the projects show page' do
       
       expect(page).to have_content(@boardfit.name)
       expect(page).to have_content(@boardfit.material)
+      expect(page).to have_content(@boardfit.challenge.theme) 
     end
   end
-  # As a visitor,
-  # When I visit a project's show page ("/projects/:id"),
-  # I see that project's name and material
   # And I also see the theme of the challenge that this project belongs to.
   # (e.g.    Litfit
   #     Material: Lamp Shade

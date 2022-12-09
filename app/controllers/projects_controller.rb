@@ -4,4 +4,8 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
   
+  def show
+    @projects = Project.find(params[:id])
+  end
+  
 end
