@@ -49,15 +49,16 @@ RSpec.describe 'Projects Show View', type: :feature do
     it 'allows you to add a contestant to a project' do
       visit "/projects/#{@news_chic.id}"
 
+
       fill_in('add_contestant', with: @kentaro.id)
-      click_button 'Add Contestant To Project'
+      click_button 'Add Contestant to Project'
 
       expect(current_path).to eq("/projects/#{@news_chic.id}")
-      expect(page).to have_content('Contestants: 2')
+      expect(page).to have_content('Contestants: 3')
 
       visit '/contestants'
 
-      expect('Gretchen').to appear_before('News Chic')
+      expect(page).to have_content('News Chic').thrice
     end
   end
 end
