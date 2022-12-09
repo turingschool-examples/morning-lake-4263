@@ -33,5 +33,11 @@ RSpec.describe 'Projects Show View', type: :feature do
       expect(page).to have_content('Newspaper')
       expect(page).to have_content('Recycled Material')
     end
+
+    it 'displays the number of contestants on the project' do
+      visit "/projects/#{@news_chic.id}"
+
+      expect(page).to have_content('Contestants: 2')
+    end
   end
 end
