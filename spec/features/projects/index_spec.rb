@@ -26,13 +26,6 @@ RSpec.describe 'projects index page' do
       expect(page).to have_content(@lit_fit.name)
       expect(page).to have_content(@lit_fit.material)
     end
-    
-    # As a visitor,
-    # I see that project's name and material
-    # And I also see the theme of the challenge that this project belongs to.
-    # (e.g.    Litfit
-    #     Material: Lamp Shade
-    #   Challenge Theme: Apartment Furnishings)  
   end
   
 end
