@@ -25,9 +25,4 @@ RSpec.describe 'the projects show page' do
       expect(page).to have_content(@boardfit.challenge.theme) 
     end
   end
-  # And I also see the theme of the challenge that this project belongs to.
-  # (e.g.    Litfit
-  #     Material: Lamp Shade
-  #   Challenge Theme: Apartment Furnishings)  
-  
 end
