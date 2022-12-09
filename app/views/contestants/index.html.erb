@@ -1,3 +1,13 @@
 <% @contestants.each do |contestant| %>
   <%= contestant.name %>
+  <p>
+    <% if contestant.projects == [] %>
+      <%= "This contestant has no projects" %>
+    <% else %>
+      Projects: <% contestant.projects[0...-1].each do |project| %>
+        <%= "#{project.name}, " %>
+      <% end %>
+      <%= contestant.projects.last.name %>
+    <% end %>  
+  </p>
 <% end %>
