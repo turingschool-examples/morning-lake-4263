@@ -4,4 +4,8 @@ class Project < ApplicationRecord
   has_many :contestant_projects
   has_many :contestants
   has_many :contestants, through: :contestant_projects
+  
+  def total_contestants
+    contestant.count
+  end
 end
