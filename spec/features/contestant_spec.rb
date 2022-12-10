@@ -14,6 +14,7 @@ RSpec.describe Contestant do
     it 'has contestants index' do
         visit '/contestants'
 
+        expect(current_path).to eq('/contestants')
         expect(page).to have_content(@jay.name)
         expect(page).to have_content(@news_chic.name)
     end
