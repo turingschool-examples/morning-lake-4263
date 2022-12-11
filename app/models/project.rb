@@ -11,4 +11,9 @@ class Project < ApplicationRecord
   def contestants_count
     contestants.count
   end
+
+  def average_years_contestant_experience
+    ages = contestants.pluck(:years_of_experience)
+    (ages.sum * 1.0)/(ages.length)
+  end
 end

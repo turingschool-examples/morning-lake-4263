@@ -45,7 +45,7 @@ RSpec.describe "Project Show" do
       visit "/projects/#{news_chic.id}"
       # I see the average years of experience for the contestants that worked on that project
       expect(page).to have_content("Average Contestant Experience:")
-      expect(page).to have_content("11.5 years")
+      expect(page).to have_content("12.5 years")
 
       # (e.g.    Litfit
       #     Material: Lamp Shade
