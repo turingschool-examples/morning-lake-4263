@@ -32,6 +32,6 @@ RSpec.describe 'Contestants index page' do
     expect(page).to have_content(gretchen.name)
     expect(page).to have_content("Projects: #{news_chic.name}, #{upholstery_tux.name}")
     expect(page).to have_content(kentaro.name)
-    expect(page).to have_content("Projects: #{upholstery_tux.name}, #{boardfit.name}")
+    expect(page).to have_content("Projects: #{boardfit.name}, #{upholstery_tux.name}")
   end
 end
