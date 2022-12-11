@@ -30,9 +30,15 @@ RSpec.describe Project, type: :model do
       ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
       ContestantProject.create(contestant_id: gretchen.id, project_id: upholstery_tux.id)
       ContestantProject.create(contestant_id: kentaro.id, project_id: upholstery_tux.id)
-
+      
       expect(news_chic.contestants_count).to eq(1)
       expect(upholstery_tux.contestants_count).to eq(2)
+    end
+    
+    it "average_years_contestant_experience" do
+      ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
+      ContestantProject.create(contestant_id: gretchen.id, project_id: news_chic.id)
+      expect(news_chic.average_years_contestant_experience).to eq(11.5)
     end
   end
 end
