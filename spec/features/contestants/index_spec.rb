@@ -21,8 +21,8 @@ RSpec.describe Project do
         ContestantProject.create(contestant_id: gretchen.id, project_id: upholstery_tux.id)
         
         visit "/contestants"
-        expect(page).to have_content("Contestant Name: Jay McCarroll /n News Chic")
-        expect(page).to have_content("Contestant Name: Gretchen Jones /n News Chic, Upholstery Tux")
+        expect(page).to have_content("Jay McCarroll Projects: News Chic")
+        expect(page).to have_content("Gretchen Jones Projects: News Chic, Upholstery Tuxedo")
       end
     end
   end
