@@ -36,7 +36,7 @@ RSpec and Shoulda-Matchers have been installed and set up.
 ## Not Required
 
 * No visual styling is required or expected
-* You do not need to test for or create any model validations.
+* You do not need to test for or create any model valid``ations.
 
 ### Before Starting User Stories
 
