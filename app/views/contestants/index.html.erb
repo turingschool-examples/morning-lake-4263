@@ -1,5 +1,5 @@
 <% @contestants.each do |contestant| %>
-  <%= contestant.name %>
+  <%= contestant.name %><br>
   <nobr>Projects:</nobr> <% contestant.projects.each do |project| %>
     <nobr><%= project.name %>, </nobr>
   <% end %>
