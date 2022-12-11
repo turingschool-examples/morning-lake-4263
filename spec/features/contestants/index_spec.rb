@@ -13,6 +13,10 @@ RSpec.describe "Contestants Index" do
 
 
     it "lists names of all contestants, and project names associated" do
+      ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
+      ContestantProject.create(contestant_id: gretchen.id, project_id: news_chic.id)
+      ContestantProject.create(contestant_id: gretchen.id, project_id: upholstery_tux.id)
+      ContestantProject.create(contestant_id: kentaro.id, project_id: upholstery_tux.id)
       # When I visit the contestants index page ("/contestants")
       visit "/contestants"
       # I see a list of names of all the contestants
@@ -21,10 +25,8 @@ RSpec.describe "Contestants Index" do
       expect(page).to have_content(kentaro.name)
       expect(page).to have_content(erin.name)
       # And under each contestants name I see a list of the projects (names) that they've been on
-      expect(page).to have_content(jay.project_names.first)
-      expect(page).to have_content(gretchen.project_names.first)
-      expect(page).to have_content(kentaro.project_names.first)
-      expect(page).to have_content(erin.project_names.first)
+      expect(page).to have_content("News Chic")
+      expect(page).to have_content("Upholstery Tuxedo")
 
       # (e.g.   Kentaro Kameyama
       #         Projects: Litfit, Rug Tuxedo
