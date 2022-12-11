@@ -19,7 +19,10 @@ RSpec.describe Project, type: :model do
       news_chic = recycled_material_challenge.projects.create(name: "News Chic", material: "Newspaper")
 
       expect(news_chic.challenge_theme).to eq(news_chic.challenge.theme)
+    end
 
+    it "contestants_count" do
+      
     end
   end
 end

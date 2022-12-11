@@ -8,9 +8,7 @@ class Contestant < ApplicationRecord
   end
 
   def project_names
-    projects.map do |project|
-      project.name
-    end
+    projects.pluck(:name)
   end
   
 end
