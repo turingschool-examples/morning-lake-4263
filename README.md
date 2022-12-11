@@ -12,14 +12,14 @@ RSpec and Shoulda-Matchers have been installed and set up.
 4. `cd <repo_name>`
 5. `bundle install`
 6. `rails db:{drop,create,migrate,seed}` -->
-
+<!-- 
 ## Instructions
 
 * Work on this assessment independently. DO NOT discuss with anyone.
 * You are allowed to use any references including notes, Google, lesson plans, etc.
 * Read each story carefully before you start working.
 * Commit Frequently, about every 15 - 30 minutes
-* Push your code to your fork **once the time is up (not before!)**
+* Push your code to your fork **once the time is up (not before!)** -->
 
 ## Submission
 
