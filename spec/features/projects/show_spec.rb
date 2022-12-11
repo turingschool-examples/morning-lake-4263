@@ -68,11 +68,11 @@ RSpec.describe "Project Show" do
       visit "/projects/#{news_chic.id}"
       expect(news_chic.contestants_count).to eq 2
       # I see a form to add a contestant to this project
-      has_form?("Add contestant")    
+      expect(page).to have_field("Add contestant")    
       # When I fill out a field with an existing contestants id
       fill_in("Add contestant", with: kentaro.id)
       # And hit "Add Contestant To Project"
-      has_button?("Add Contestant To Project")
+      expect(page).to have_button("Add Contestant To Project")
       click_button("Add Contestant To Project")
       # I'm taken back to the project's show page
       expect(current_path).to eq("/projects/#{news_chic.id}")
