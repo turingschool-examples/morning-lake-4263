@@ -4,14 +4,14 @@ This repository requires and has been tested on Ruby v2.7.4 and is based on Rail
 
 RSpec and Shoulda-Matchers have been installed and set up.
 
-## Setup
+<!-- ## Setup
 
 1. fork this repo
 2. clone your fork
 3. `git clone <repo_name>`
 4. `cd <repo_name>`
 5. `bundle install`
-6. `rails db:{drop,create,migrate,seed}`
+6. `rails db:{drop,create,migrate,seed}` -->
 
 ## Instructions
 
