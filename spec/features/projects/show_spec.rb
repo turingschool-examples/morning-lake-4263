@@ -41,6 +41,9 @@ RSpec.describe "Project Show" do
   
   describe "Extension Story 1" do
     it "Average years of experience for contestant by project" do
+      ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
+      ContestantProject.create(contestant_id: gretchen.id, project_id: news_chic.id)
+
       # When I visit a project's show page
       visit "/projects/#{news_chic.id}"
       # I see the average years of experience for the contestants that worked on that project
