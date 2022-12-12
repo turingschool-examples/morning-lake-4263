@@ -38,4 +38,10 @@ RSpec.describe Project, type: :model do
       expect(boardfit.contestant_count).to eq(2)
     end
   end
+
+  describe "#project_theme" do
+    it 'returns the theme of the project' do
+      expect(boardfit.challenge_theme).to eq("Recycled Material")
+    end
+  end
 end
