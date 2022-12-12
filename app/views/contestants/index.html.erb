@@ -2,6 +2,6 @@
   <% @contestants.each do |contestant| %>
     <%= contestant.name %><br>
     <%= label :text, :projects, 'Projects: ' %>
-    <%= contestant.projects.pluck.join %><br>
+    <%= contestant.projects.pluck(:name).join(', ') %><br><br>
   <% end %>
 </h3>

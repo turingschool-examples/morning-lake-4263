@@ -3,9 +3,10 @@
   <%= @project.name %><br>
   <%= label :text, :material, 'Material: ' %>
   <%= @project.material %><br>
-  <%= label :text, :challenge_theme, 'Challenege Theme: ' %>
+  <%= label :text, :challenge_theme, 'Challenge Theme: ' %>
   <%= @project.challenge.theme %><br>
   <%= label :text, :number_of_contestants, 'Number of Contestants: ' %>
-  <%= @project.contestant_count %>
-
+  <%= @project.contestant_count %><br>
+  <%= label :text, :average_contestant_experience, 'Average Contestant Experience: ' %>
+  <%= @project.average_years_experience %>
 </h3>
