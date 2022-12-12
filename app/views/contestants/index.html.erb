@@ -1,5 +1,7 @@
 <h1>Contestants<h1>
 
 <% @contestants.each do |c|%>
-  <%= c.name %>
+  <%binding.pry%>
+  <p><%= c.name %></p>
+  <p><%= binding.pry c.projects %></p>
 <%end%>
