@@ -1,0 +1,7 @@
+<h1>Here are our contestants!</h1>
+
+<% @contestants.each do |contestant|%>
+  <p><%= contestant.name %></p>
+  <% binding.pry %>
+  <p><%= "projects: #{@contestant.project_names}"%></p>
+<% end %>
