@@ -13,9 +13,8 @@ RSpec.describe Project, type: :model do
     it {should have_many(:contestants).through(:contestant_projects)}
   end
 
-  describe '.contestant_count' do
-    it 'counts the number of contestants assoctiated with the project' do
-      @contestant_1 = create(:contestant)
+  before :each do
+    @contestant_1 = create(:contestant)
       @contestant_2 = create(:contestant)
       @contestant_3 = create(:contestant)
       @challenge_1  = create(:challenge)
@@ -27,10 +26,23 @@ RSpec.describe Project, type: :model do
       @contestant_2.projects << @project_1
       @contestant_2.projects << @project_3
       @contestant_3.projects << @project_1
+  end
 
+  describe '.contestant_count' do
+    it 'counts the number of contestants assoctiated with the project' do
+      
       expect(@project_1.contestant_count).to eq(3)
       expect(@project_2.contestant_count).to eq(1)
       expect(@project_3.contestant_count).to eq(1)
+    end
+  end
+
+  describe '.average years experience' do
+    it 'average the contestants  with the project' do
+      
+      expect(@project_1.average_years_experience).to eq(3)
+      expect(@project_2.average_years_experience).to eq(1)
+      expect(@project_3.average_years_experience).to eq(1)
     end
   end
 end
