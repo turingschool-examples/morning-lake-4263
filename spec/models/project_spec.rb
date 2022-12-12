@@ -32,6 +32,7 @@ RSpec.describe Project, type: :model do
         ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
         
         expect(@news_chic.contestant_count).to eq 3
+        expect(@boardfit.contestant_count).to eq 1
       end
     end
   end

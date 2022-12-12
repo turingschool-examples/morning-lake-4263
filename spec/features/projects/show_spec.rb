@@ -36,7 +36,7 @@ RSpec.describe 'The project show page' do
 
   it 'displays the number of contestants working on a project' do
     visit "/projects/#{@boardfit.id}"
-
+    save_and_open_page
     expect(page).to have_content("Number of Contestants: 2")
   end
 end
