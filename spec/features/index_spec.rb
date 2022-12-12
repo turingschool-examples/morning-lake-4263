@@ -32,5 +32,6 @@ ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
     expect(page).to have_content(upholstery_tux.name)
     expect(page).to have_content(boardfit.name)
     expect(page).to have_content(news_chic.name)
+    save_and_open_page
   end
 end

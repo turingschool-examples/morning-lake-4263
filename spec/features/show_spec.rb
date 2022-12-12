@@ -54,7 +54,7 @@ ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
 ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
 
     visit "/projects/#{news_chic.id}"
-
-    expect(page).to have_content(1)
+    save_and_open_page
+    expect(page).to have_content(4)
   end
 end

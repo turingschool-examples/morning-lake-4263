@@ -7,4 +7,12 @@ class Project < ApplicationRecord
     challenge.theme
   end
 
+  def count
+    # binding.pry
+    projects = Contestant.all.each do |c|
+      c.projects
+    end
+    projects.count
+  end
+
 end
