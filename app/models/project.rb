@@ -4,7 +4,7 @@ class Project < ApplicationRecord
 
 
   def theme
-    binding.pry
     challenge.theme
   end
+
 end
