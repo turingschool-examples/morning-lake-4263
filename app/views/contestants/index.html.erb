@@ -3,7 +3,7 @@
 <% @contestants.each do |contestant|%>
   <p><%= contestant.name %></p>
   <p>Projects</p>
-    <% contestant.projects.each do |project| %>
+    <% contestant.all_projects.each do |project| %>
       <p><%= project.name%></p>
     <% end %>
 <% end %>
