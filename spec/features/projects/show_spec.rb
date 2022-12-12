@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'the projects show page', type: :feature do
-
   let!(:recycled_material_challenge) { Challenge.create(theme: "Recycled Material", project_budget: 1000) }
   let!(:furniture_challenge) { Challenge.create(theme: "Apartment Furnishings", project_budget: 1000) }
 
@@ -30,5 +29,13 @@ RSpec.describe 'the projects show page', type: :feature do
     expect(page).to have_content("Challenge Theme: Recycled Material")
     expect(page).to_not have_content("Boardfit")
     expect(page).to_not have_content("Litfit")
+  end
+
+  it 'shows a count of the number of contestants on this project' do
+    visit "/projects/#{boardfit.id}"
+
+    expect(page).to have_content("Project Name: Boardfit")
+    expect(page).to have_content("Material: Cardboard Boxes")
+    expect(page).to have_content("Challenge Theme: Recycled Material")
   end
 end

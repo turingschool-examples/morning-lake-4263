@@ -29,10 +29,4 @@ RSpec.describe 'the /contestants index page', type: :feature do
     expect(page).to have_content("Kentaro Kameyama Projects: Boardfit , Upholstery Tuxedo")
     expect(page).to have_content("Erin Robertson Projects: Boardfit")
   end
-
-  it 'shows a list of each contestants projects under their names' do
-    visit '/contestants'
-    save_and_open_page  
-  end
-
 end
