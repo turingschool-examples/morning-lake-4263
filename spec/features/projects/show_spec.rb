@@ -42,7 +42,7 @@ RSpec.describe 'projects show page', type: :feature do
     @news_chic.contestants << @erin
     
     visit "/projects/#{@news_chic.id}"
-    save_and_open_page
+    
     expect(page).to have_content("Number of Contestants: 3")
 
     @boardfit.contestants << @jay
@@ -51,7 +51,6 @@ RSpec.describe 'projects show page', type: :feature do
     @boardfit.contestants << @kentaro
 
     visit "/projects/#{@boardfit.id}"
-    save_and_open_page
 
     expect(page).to have_content("Number of Contestants: 4")
   end
