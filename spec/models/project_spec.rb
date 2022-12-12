@@ -12,4 +12,15 @@ RSpec.describe Project, type: :model do
     it {should have_many :contestant_projects}
     it {should have_many(:contestants).through(:contestant_projects)}
   end
+
+  it 'has a method to count the number of contestants on the project' do
+    recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
+    boardfit = recycled_material_challenge.projects.create(name: "Boardfit", material: "Cardboard Boxes")
+    kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
+    erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
+    ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
+    ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
+  
+    expect(boardfit.contestant_count).to eq(2)
+  end
 end
