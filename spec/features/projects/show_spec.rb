@@ -34,8 +34,12 @@ RSpec.describe 'the projects show page', type: :feature do
   it 'shows a count of the number of contestants on this project' do
     visit "/projects/#{boardfit.id}"
 
-    expect(page).to have_content("Project Name: Boardfit")
+    expect(page).to have_content("Number of Contestants: 2")
     expect(page).to have_content("Material: Cardboard Boxes")
     expect(page).to have_content("Challenge Theme: Recycled Material")
+
+    visit "/projects/#{lit_fit.id}"
+    save_and_open_page
+    expect(page).to have_content("Number of Contestants: 0")
   end
 end
