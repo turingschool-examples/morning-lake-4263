@@ -12,8 +12,9 @@ RSpec.describe 'the projects show page' do
 
       visit "/projects/#{@project.id}"
 
-      expect(page).to have_content(@application.name)
-      expect(page).to have_content(@application.material)
+      expect(page).to have_content(@project.name)
+      expect(page).to have_content(@project.material)
+      expect(page).to have_content(@project.challenge.theme)
     end
   end
 end
