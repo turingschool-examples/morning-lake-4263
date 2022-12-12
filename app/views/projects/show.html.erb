@@ -1,3 +1,11 @@
-<p>Name: <%= @project.name %></p>
+<h1>Name: <%= @project.name %><h1>
 <p>Material: <%= @project.material %></p>
 <p>Challenge Theme: <%= @challenge.theme %></p>
+<p>Number of Contestants: <%= @project.contestant_count%><p>
+<p>Average Contestant Experience: <%= @project.average_exp%><p>
+
+<%= form_with url: "/projects/#{@project.id}/search", method: :get do |form| %>
+  <%= form.label :query, "Enter id:" %>
+  <%= form.number_field :query %>
+  <%= form.submit "Add Contestant To Project" %>
+<% end %>

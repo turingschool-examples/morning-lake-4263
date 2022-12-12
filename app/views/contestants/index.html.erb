@@ -1,0 +1,10 @@
+<h1>Contestants<h1>
+
+<% @contestants.each do |contestant| %>
+  <h3><%= contestant.name %><h3>
+<ul>
+  <% contestant.projects.each do |project| %>
+    <li><%= project.name %>
+  <% end %>
+</ul>
+<% end %>
