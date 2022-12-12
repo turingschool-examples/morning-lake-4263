@@ -7,4 +7,9 @@ class Project < ApplicationRecord
   def contestant_count
     self.contestants.distinct.count
   end
+
+  def avg_yrs_experience
+    contestants = self.contestants
+    contestants.sum{|contestant| contestant.years_of_experience} / contestants.count
+  end
 end
