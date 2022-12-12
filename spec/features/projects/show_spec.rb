@@ -17,10 +17,8 @@ RSpec.describe 'the projects show page' do
 
     @contestant_1.projects << @project_1
     @contestant_1.projects << @project_2
-
     @contestant_2.projects << @project_1
     @contestant_2.projects << @project_3
-
     @contestant_4.projects << @project_2
   end
 
@@ -37,7 +35,7 @@ RSpec.describe 'the projects show page' do
     it 'displays count of contestants on the project' do
       visit "/projects/#{@project_1.id}"
 
-      expect(page).to have_content("Contestant Count: 2")
+      expect(page).to have_content("Number of Contestants: 2")
     end
   end
 end
