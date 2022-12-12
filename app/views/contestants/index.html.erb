@@ -2,6 +2,8 @@
 
 <% @contestants.each do |contestant|%>
   <p><%= contestant.name %></p>
-  <% binding.pry %>
-  <p><%= "projects: #{@contestant.project_names}"%></p>
+  <p>Projects</p>
+    <% contestant.projects.each do |project| %>
+      <p><%= project.name%></p>
+    <% end %>
 <% end %>
