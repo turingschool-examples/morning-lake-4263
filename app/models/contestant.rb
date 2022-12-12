@@ -5,11 +5,9 @@ class Contestant < ApplicationRecord
   has_many :projects, through: :contestant_projects
 
   def project_list
-    all_projects = []
-    self.projects.each do |project|
-      all_projects << project.name
+    all_projects = self.projects.map do |project|
+      project.name
     end
-    project_list = all_projects.join(", ")
-    "Projects: #{project_list}"
+    "Projects: #{all_projects.join(", ")}"
   end
 end
