@@ -11,4 +11,8 @@ class Project < ApplicationRecord
   def contestant_experience
     contestants.select(:years_of_experience).average(:years_of_experience).to_f.round(2)  
   end
+
+  def add_contestant(contestant_id)
+    contestants << Contestant.find(contestant_id)
+  end
 end

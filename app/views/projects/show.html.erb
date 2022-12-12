@@ -3,3 +3,9 @@
 <p>Challenge Theme: <%= @challenge.theme %></p>
 <p>Number of Contestants: <%= @contestant_count %>
 <p>Average Contestant Experience: <%= @contestant_experience %> years
+<br><br><br>
+<%= form_with url: "/projects/#{ @project.id }", local: true do |form|%>
+  <%= form.label :ContestantID %>
+  <%= form.number_field :ContestantID %>
+  <%= form.submit 'Add Contestant To Project' %>
+<% end %>

@@ -46,7 +46,24 @@ RSpec.describe Project, type: :model do
       ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
   
       expect(boardfit.contestant_experience).to eq(11)
+    end
+  end
 
+  describe '#add_contestant()' do
+    it 'adds a contestant to the project when passed the contestant ID' do
+      recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
+      boardfit = recycled_material_challenge.projects.create(name: "Boardfit", material: "Cardboard Boxes")
+      jay = Contestant.create(name: "Jay McCarroll", age: 40, hometown: "LA", years_of_experience: 13)
+      gretchen = Contestant.create(name: "Gretchen Jones", age: 36, hometown: "NYC", years_of_experience: 12)
+      kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
+      ContestantProject.create(contestant_id: jay.id, project_id: boardfit.id)
+
+      expect(boardfit.contestant_count).to eq(1)
+
+      boardfit.add_contestant(gretchen.id)
+
+      expect(boardfit.contestant_count).to eq(2)
+      expect(gretchen.projects).to include(boardfit)
     end
   end
 end
