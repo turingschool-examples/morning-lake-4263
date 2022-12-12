@@ -18,7 +18,7 @@ RSpec.describe 'contestants index' do
     ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
 
     visit '/contestants'
-    save_and_open_page
+
     within("div##{ jay.id }") do
       expect(page).to have_content(jay.name)
       jay.projects.each do |project|
@@ -41,14 +41,3 @@ RSpec.describe 'contestants index' do
     end
   end
 end
-
-# As a visitor,
-# When I visit the contestants index page ("/contestants")
-# I see a list of names of all the contestants
-# And under each contestants name I see a list of the projects (names) that they've been on
-
-# (e.g.   Kentaro Kameyama
-#         Projects: Litfit, Rug Tuxedo
-
-#         Jay McCarroll
-#         Projects: LeatherFeather)
