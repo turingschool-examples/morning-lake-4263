@@ -26,7 +26,6 @@ RSpec.describe 'The contestant index page' do
   end
   it 'displays a list of all contestants' do
     visit "/contestants"
-   save_and_open_page 
     within("#contestants") do
       expect(page).to have_content(@jay.name)
       expect(page).to have_content(@gretchen.name)
