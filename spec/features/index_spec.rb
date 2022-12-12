@@ -29,5 +29,9 @@ ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
     expect(page).to have_content(gretchen.name)
     expect(page).to have_content(erin.name)
     expect(page).to have_content(kentaro.name)
+    expect(page).to have_content(upholstery_tux.name)
+    expect(page).to have_content(lit_fit.name)
+    expect(page).to have_content(boardfit.name)
+    expect(page).to have_content(news_chic.name)
   end
 end
