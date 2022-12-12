@@ -9,7 +9,7 @@ class Project < ApplicationRecord
   end
 
   def contestant_experience
-    contestants.select(:years_of_experience).average(:years_of_experience).to_f.round(2)  
+    contestants.average(:years_of_experience).to_f.round(2)  
   end
 
   def add_contestant(contestant_id)
