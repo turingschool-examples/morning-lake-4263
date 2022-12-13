@@ -2,6 +2,9 @@
 
 <% @contestants.each do |contestant| %>
   <ul>
-    <li>Name: <%= contestant.name %>
+    <%= contestant.name %> Projects:<br/>
+      <% contestant.projects_portfolio.each do |project|%>
+            <%= project.name %>, 
+          <% end %>
   </ul>
 <% end %>
