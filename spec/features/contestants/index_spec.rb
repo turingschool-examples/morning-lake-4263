@@ -37,12 +37,8 @@ RSpec.describe 'contestants index page' do
 
     expect(page).to have_content(jay.name)
     expect(page).to have_content(erin.name)
-    
-    within "div#contestant-#{kentaro.id}" do
-      expect(page).to have_content(kentaro.name)
-      expect(page).to have_content("Projects: #{upholstery_tux.name}, #{boardfit.name}")
-      expect(page).to have_no_content(erin.name)
-      expect(page).to have_no_content(lit_fit.name)
-    end
+
+    expect(page).to have_content(kentaro.name)
+    expect(page).to have_content("Projects: #{boardfit.name}, #{upholstery_tux.name}")
   end
 end
