@@ -41,4 +41,11 @@ RSpec.describe Project, type: :model do
       expect(@upholstery_tux.contestant_count).to eq(2)
     end
   end
+
+  describe "contestant average experience" do
+    xit "returns the average of the contestants on the project experience" do
+      expect(@upholstery_tux.avg_contestant_exp).to eq(10)
+      expect(@boardfit.avg_contestant_exp).to eq(11.5)
+    end
+  end
 end

@@ -35,8 +35,14 @@ RSpec.describe "Projects show page", type: :feature do
 
       it "see a count of the number of contestants on this project" do
         visit "/projects/#{@upholstery_tux.id}"
-        save_and_open_page
+        
         expect(page).to have_content("Number of Contestants: #{@upholstery_tux.contestant_count}")
+      end
+
+      xit "see average years of experience for the contestants that worked on the project" do
+        visit "/projects/#{@upholstery_tux.id}"
+
+        expect(page).to have_content("Average Contestant Experience: #{@upholstery_tux.avg_contestant_exp}")
       end
     end
 end
