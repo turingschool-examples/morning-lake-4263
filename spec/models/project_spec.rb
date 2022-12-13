@@ -36,7 +36,8 @@ RSpec.describe Project, type: :model do
       ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
       ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
 
-      expect(lit_fit.contestant_count).to eq(2)
+      expect(lit_fit.contestant_count).to eq(0)
+      expect(upholstery_tux.contestant_count).to eq(2)
     end
   end
 end
