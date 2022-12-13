@@ -27,7 +27,7 @@ RSpec.describe "Projects Show page" do
     it "see the projects name and material and challenge name" do
       visit "/projects/#{@lit_fit.id}"
 #  require 'pry'; binding.pry
-save_and_open_page
+# save_and_open_page
 
       expect(page).to have_content(@lit_fit.name)
       expect(page).to have_content(@lit_fit.material)
@@ -42,8 +42,15 @@ save_and_open_page
 
       expect(page).to have_content("Number of Contestants")
       expect(page).to have_content(2)
-      
     end
   end
 
+  describe "Extention 1" do
+    it 'average total years of experience' do
+       visit "/projects/#{@news_chic.id}"
+save_and_open_page
+       expect(page).to have_content("Average Contestant Experience")
+       expect(page).to have_content(12.5)
+    end
+  end
 end
