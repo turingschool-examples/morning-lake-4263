@@ -32,5 +32,11 @@ RSpec.describe "Projects show page", type: :feature do
         expect(page).to have_content(@news_chic.material)
         expect(page).to have_content(@news_chic.challenge.theme)
       end
+
+      it "see a count of the number of contestants on this project" do
+        visit "/projects/#{@upholstery_tux.id}"
+        save_and_open_page
+        expect(page).to have_content("Number of Contestants: #{@upholstery_tux.contestant_count}")
+      end
     end
 end
