@@ -3,4 +3,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @challenge = @project.challenge
   end
+
+  
 end
