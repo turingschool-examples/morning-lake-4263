@@ -25,7 +25,7 @@ RSpec.describe 'Contestants index page' do
       ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
     end
     it 'shows a list of all contestants and the projects they have been on' do
-      visit "/projects"
+      visit "/contestants"
 
       expect(page).to have_content(@jay.name)
       expect(page).to have_content(@gretchen.name)
