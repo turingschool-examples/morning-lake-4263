@@ -11,5 +11,6 @@ RSpec.describe Project, type: :model do
     it {should belong_to :challenge}
     it {should have_many :contestant_projects}
     it {should have_many(:contestants).through(:contestant_projects)}
+
   end
 end

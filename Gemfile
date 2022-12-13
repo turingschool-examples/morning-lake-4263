@@ -43,6 +43,8 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'orderly'
+  gem 'pry-rails'
 end
 
 group :development do
