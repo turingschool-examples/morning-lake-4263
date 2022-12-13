@@ -31,4 +31,14 @@ RSpec.describe 'Show Page' do
       expect(page).to have_content(@upholstery_tux.challenge.theme)
     end
   end
+
+  it "displays the number of contestants on this project" do
+    visit ("/projects/#{@upholstery_tux.id}")
+    expect(page).to_not have_content("Number of Contestants: 2")
+    expect(page).to_not have_content("Number of Contestants: 0")
+    expect(page).to_not have_content("Number of Contestants: #{@news_chic.contestant_count}")
+save_and_open_page
+    expect(page).to have_content("Number of Contestants: #{@upholstery_tux.contestant_count}")
+  end
+
 end
