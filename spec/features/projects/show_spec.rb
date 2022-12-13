@@ -41,18 +41,35 @@ RSpec.describe 'projects show page' do
         ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
         ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
         ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
+        ContestantProject.create(contestant_id: @erin.id, project_id: @upholstery_tux.id)
         ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
-        ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
-        visit "/projects/#{@lit_fit.id}"
       end
       it 'I see that projects name and material' do
+        visit "/projects/#{@lit_fit.id}"
         expect(page).to have_content("#{@lit_fit.name}")
         expect(page).to have_content("#{@lit_fit.material}")
-      end
 
+        visit "/projects/#{@upholstery_tux.id}"
+        expect(page).to have_content("#{@upholstery_tux.name}")
+        expect(page).to have_content("#{@upholstery_tux.material}")
+      end
+      
       it 'And I also see the them of the challenge that this project belongs to' do
+        visit "/projects/#{@lit_fit.id}"
         expect(page).to have_content("#{@furniture_challenge.theme}")
-        save_and_open_page
+        visit "/projects/#{@news_chic.id}"
+        expect(page).to have_content("#{@recycled_material_challenge.theme}")
+      end
+      
+      it 'I see a count of the number of contestants on this project' do
+        visit "/projects/#{@lit_fit.id}"
+        expect(page).to have_content("Number of Contestants: 0")
+        visit "/projects/#{@upholstery_tux.id}"
+        expect(page).to have_content("Number of Contestants: 3")
+        visit "/projects/#{@news_chic.id}"
+        expect(page).to have_content("Number of Contestants: 2")
+        visit "/projects/#{@boardfit.id}"
+        expect(page).to have_content("Number of Contestants: 1")
       end
     end
   end
