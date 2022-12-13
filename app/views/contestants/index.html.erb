@@ -1,1 +1,7 @@
 </h1>All Contestants</h2>
+
+<% @contestants.each do |contestant| %>
+  <ul>
+    <li>Name: <%= contestant.name %>
+  </ul>
+<% end %>

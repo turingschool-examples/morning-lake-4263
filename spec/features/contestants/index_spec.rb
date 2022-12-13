@@ -26,7 +26,7 @@ RSpec.describe "Contestants Index Page", type: :feature do
   describe "Visiting index" do
     it "See list of names of all the contestants" do
       visit "/contestants"
-
+      save_and_open_page
       expect(page).to have_content(@jay.name)
       expect(page).to have_content(@gretchen.name)
       expect(page).to have_content(@kentaro.name)
