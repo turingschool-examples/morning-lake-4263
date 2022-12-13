@@ -34,5 +34,6 @@ RSpec.describe 'Contestants index page' do
       expect(page).to have_content(@news_chic.name)
       expect(page).to have_content(@upholstery_tux.name)
       expect(page).to have_content(@boardfit.name)
+      expect(page).to_not have_content(@lit_fit.name)
     end
   end
