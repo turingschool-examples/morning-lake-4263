@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'test_helper'
 
 RSpec.describe Project, type: :model do
   describe "validations" do
