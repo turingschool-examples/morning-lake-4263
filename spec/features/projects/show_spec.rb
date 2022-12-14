@@ -43,6 +43,7 @@ RSpec.describe Project, type: :feature do
       expect(page).to_not have_content('Number of Contestants: 4')
 
       visit "/projects/#{@lit_fit.id}"
+      
       expect(page).to have_content('Number of Contestants: 0')
       expect(page).to_not have_content('Number of Contestants: 1')
       expect(page).to_not have_content('Number of Contestants: 2')
