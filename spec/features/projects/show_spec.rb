@@ -32,5 +32,14 @@ RSpec.describe Project, type: :feature do
       expect(page).to have_content('Cardboard Boxes')
       expect(page).to have_content('Recycled Material')
     end
+
+    it 'displays a count of the number of contestants on this project' do
+      visit "/projects/#{@boardfit.id}"
+      
+      expect(page).to have_content('Number of Contestants: 2')
+      expect(page).to_not have_content('Number of Contestants: 1')
+      expect(page).to_not have_content('Number of Contestants: 3')
+      expect(page).to_not have_content('Number of Contestants: 4')
+    end
   end
 end
