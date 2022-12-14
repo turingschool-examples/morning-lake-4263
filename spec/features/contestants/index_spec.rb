@@ -36,10 +36,11 @@ RSpec.describe Contestant, type: :feature do
 
     it 'lists all of the project names that the contestants have been on under each contestant\'s name' do
       visit "/contestants"
-      
+
       expect(page).to have_content(@boardfit.name)
-      expect(@jay.name).to appear_before(@news_chic.name)
-      expect(@news_chic.name).to appear_before(@gretchen.name)
+      expect(page).to have_content(@news_chic.name)
+      expect(page).to have_content(@upholstery_tux.name)
+      expect(page).to_not have_content(@lit_fit.name)
     end
   end
 end
